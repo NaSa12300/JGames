@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JGames Library</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .search-box {
+      text-align: center;
+      margin: 20px auto;
+    }
+    .search-box input {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 2px solid #444;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎮 JGames</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Game Library</h2>
+      <p>Select a game and start playing instantly.</p>
+    </section>
+
+    <!-- Search Feature -->
+    <div class="search-box">
+      <input type="text" id="gameSearch" placeholder="Search games...">
+    </div>
+
+    <div class="game-grid" id="gameGrid">
+      <!-- Alphabetical order -->
+      <a class="game-card" href="play.html?game=cl1on1soccer.html">⚽ 1 on 1 Soccer</a>
+      <a class="game-card" href="play.html?game=cl1v1.lol">🔫 1v1.lol</a>
+      <a class="game-card" href="play.html?game=clachievementunlocked.html">🏆 Achievement Unlocked</a>
+      <a class="game-card" href="play.html?game=clbasketballlegendsgoodywoody.html">🏀 Basketball Legends</a>
+      <a class="game-card" href="play.html?game=clbitlife.html">📱 BitLife</a>
+      <a class="game-card" href="play.html?game=clbitplanes.html">✈️ Bit Planes</a>
+      <a class="game-card" href="play.html?game=clbloxorz.html">🟦 Bloxorz</a>
+      <a class="game-card" href="play.html?game=clburritobison.html">🌯 Burrito Bison</a>
+      <a class="game-card" href="play.html?game=clchickenwar.html">🐔 Chicken War</a>
+      <a class="game-card" href="play.html?game=clcoreball.html">⚪ Core Ball</a>
+      <a class="game-card" href="play.html?game=clcurveball.html">🎾 Curve Ball</a>
+      <a class="game-card" href="play.html?game=cldogeminer.html">🐶 Doge Miner</a>
+      <a class="game-card" href="play.html?game=clducklife.html">🦆 Duck Life</a>
+      <a class="game-card" href="play.html?game=clfruitninja.html">🍉 Fruit Ninja</a>
+      <a class="game-card" href="play.html?game=EaglercraftX-1.8.8(u29).html">⛏️ Minecraft</a>
+      <a class="game-card" href="play.html?game=clngon.html">🛸 NGon</a>
+      <a class="game-card" href="play.html?game=clpolytrack.html">🚗 Polytrack</a>
+      <a class="game-card" href="play.html?game=clspacebarclicker.html">🔘 Spacebar Clicker</a>
+      <a class="game-card" href="play.html?game=clstateio.html">🌍 State.io</a>
+      <a class="game-card" href="play.html?game=clstickmanhook.html">🪝 Stickman Hook</a>
+      <a class="game-card" href="play.html?game=clstickwar.html">⚔️ Stick War</a>
+      <a class="game-card" href="play.html?game=clswerve.html">🚙 Swerve</a>
+      <a class="game-card" href="play.html?game=cltrollfacequest1.html">😂 Trollface Quest</a>
+      <a class="game-card" href="play.html?game=cltunnelrush.html">🚀 Tunnel Rush</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 JGames. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('gameSearch');
+    const gameCards = document.querySelectorAll('.game-card');
+
+    searchInput.addEventListener('keyup', () => {
+      let filter = searchInput.value.toLowerCase();
+      gameCards.forEach(card => {
+        let text = card.textContent.toLowerCase();
+        if (text.includes(filter)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

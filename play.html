@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Play Game - JGames</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 JGames</h1>
+    <nav>
+      <a href="games.html">⬅ Back to Library</a>
+    </nav>
+  </header>
+
+  <main class="game-wrapper">
+    <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
+
+    <div class="controls">
+      <button id="fullscreenBtn">⛶ Fullscreen</button>
+    </div>
+  </main>
+
+  <script>
+    // Get ?game= from URL
+    const params = new URLSearchParams(window.location.search);
+    const gameFile = params.get("game");
+
+    if (gameFile) {
+      document.getElementById("gameFrame").src = "UGS/" + gameFile;
+    }
+
+    // Fullscreen button
+    document.getElementById("fullscreenBtn").addEventListener("click", () => {
+      const iframe = document.getElementById("gameFrame");
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+      }
+    });
+  </script>
+</body>
+</html>
